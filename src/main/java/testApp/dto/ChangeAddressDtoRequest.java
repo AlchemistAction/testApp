@@ -11,7 +11,7 @@ public class ChangeAddressDtoRequest {
 
     public ChangeAddressDtoRequest(int id, Address address) {
         this.id = id;
-        this.address = address;
+        setAddress(address);
     }
 
     public int getId() {
@@ -28,7 +28,7 @@ public class ChangeAddressDtoRequest {
 
     public void setAddress(Address address) {
         if (address.getCountry() == null && address.getCity() == null)
-            throw new RuntimeException("address cant be null");
+            throw new RuntimeException("Address can't be null");
         this.address = address;
     }
 
